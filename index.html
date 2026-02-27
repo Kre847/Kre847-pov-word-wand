@@ -2,24 +2,64 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-<meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<title>Word Wand v9</title>
-<link rel='stylesheet' href='styles.css'>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Word Wand v9.1</title>
+  <link rel='stylesheet' href='styles.css'>
 </head>
 <body>
-<div id="welcome" class="screen">
-  <div class="left">
-    <h1>Welcome to Word Wand!</h1>
-    <h2>Please select an option below.</h2>
-    <div class="controls">
-      <input id="textInput" placeholder="add text here" />
-      <button id="goBtn">Go</button>
+  <div id='welcome' class='screen'>
+    <div class='left'>
+      <h1 class='title'>Welcome to Word Wand!</h1>
+      <h2 class='subtitle'>Please select an option below.</h2>
+
+      <div class='controls'>
+        <input id='textInput' placeholder='add text here' maxlength='24'>
+
+        <label class='chip'>Color
+          <select id='colorSelect'>
+            <option value='#ffffff'>White</option>
+            <option value='#ff0000'>Red</option>
+            <option value='#00ff00'>Green</option>
+            <option value='#00ffff'>Cyan</option>
+            <option value='disco'>Disco 🌈</option>
+          </select>
+        </label>
+
+        <label id='discoSpeedWrap' class='chip' style='display:none;'>Disco speed
+          <input id='discoSpeed' type='range' min='0.2' max='5' step='0.1' value='1.8'>
+          <span id='discoSpeedVal'>1.8×</span>
+        </label>
+
+        <label class='chip'>Duration
+          <select id='durationSelect'>
+            <option value='10000'>10s</option>
+            <option value='20000' selected>20s</option>
+            <option value='30000'>30s</option>
+            <option value='Infinity'>∞ No limit</option>
+          </select>
+        </label>
+
+        <label class='chip'>Auto‑mirror <input id='autoMirrorChk' type='checkbox' checked></label>
+        <label class='chip'>Haptics <input id='hapticsChk' type='checkbox' checked></label>
+
+        <button id='goBtn' class='cta' disabled>Go</button>
+        <button id='helpBtn' class='chip'>Help</button>
+      </div>
     </div>
+
+    <img class='magician' src='magician.png' alt='magician'>
   </div>
-  <img class="magician" src="https://eu-prod.asyncgw.teams.microsoft.com/v1/objects/0-neu-d24-7fc298b2ba4721b1d9a5c3f258c3deb0/views/imagemedium" alt="magician" />
-</div>
-<canvas id="wand"></canvas>
-<script src="app.js"></script>
+
+  <canvas id='wand'></canvas>
+  <button id='stopBtn' class='stopBtn' style='display:none;'>Stop</button>
+
+  <dialog id='helpDialog'>
+    <h3>How to use</h3>
+    <p>Enter text, press Go, and sweep your phone side‑to‑side.</p>
+    <button id='closeHelp'>Close</button>
+  </dialog>
+
+  <script src='app.js'></script>
 </body>
 </html>
