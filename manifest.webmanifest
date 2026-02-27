@@ -1,11 +1,7 @@
 
 {
-  "name": "POV Wand v8",
-  "short_name": "POV Wand",
-  "start_url": "./",
-  "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#000000",
-  "theme_color": "#000000",
-  "icons": []
+ "name":"Word Wand v9",
+ "display":"standalone",
+ "orientation":"portrait",
+ "start_url":"./"
 }

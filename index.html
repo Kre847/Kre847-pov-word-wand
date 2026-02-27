@@ -1,80 +1,25 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>POV Wand v8</title>
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Word Wand v9</title>
+<link rel='stylesheet' href='styles.css'>
 </head>
 <body>
-  <main>
-    <div id="ui" class="bar">
-      <label class="chip">
-        <span>Text</span>
-        <input id="textInput" type="text" placeholder="add text here" maxlength="24" />
-      </label>
-
-      <label class="chip">
-        <span>Color</span>
-        <select id="colorSelect">
-          <option value="#ffffff">White</option>
-          <option value="#ff0000">Red</option>
-          <option value="#00ff00">Green</option>
-          <option value="#00ffff">Cyan</option>
-          <option value="disco">Disco 🌈</option>
-        </select>
-      </label>
-
-      <label id="discoSpeedWrap" class="chip" style="display:none">
-        <span>Disco speed</span>
-        <input id="discoSpeed" type="range" min="0.2" max="5" step="0.1" value="1.8" />
-        <span id="discoSpeedVal" class="mono">1.8×</span>
-      </label>
-
-      <label class="chip">
-        <span>Duration</span>
-        <select id="durationSelect">
-          <option value="10000">10 s</option>
-          <option value="20000" selected>20 s</option>
-          <option value="30000">30 s</option>
-          <option value="Infinity">∞ No limit</option>
-        </select>
-      </label>
-
-      <label class="chip">
-        <span>Auto‑mirror</span>
-        <input id="autoMirrorChk" type="checkbox" checked />
-      </label>
-
-      <label class="chip">
-        <span>Haptics</span>
-        <input id="hapticsChk" type="checkbox" checked />
-      </label>
-
-      <button id="goBtn" class="cta" disabled>Go</button>
-      <button id="helpBtn" class="chip">Help</button>
+<div id="welcome" class="screen">
+  <div class="left">
+    <h1>Welcome to Word Wand!</h1>
+    <h2>Please select an option below.</h2>
+    <div class="controls">
+      <input id="textInput" placeholder="add text here" />
+      <button id="goBtn">Go</button>
     </div>
-
-    <canvas id="wand" aria-label="POV display"></canvas>
-  </main>
-
-  <dialog id="helpDialog">
-    <h3>How to use</h3>
-    <ol>
-      <li>Enter a word (max 24).</li>
-      <li>Tap <b>Go</b> (this also enables motion on iOS).</li>
-      <li>Sweep the phone side‑to‑side for 2–3 seconds to auto‑calibrate.</li>
-    </ol>
-    <p>Tip: Use <b>Disco 🌈</b> + higher speed for a colourful effect. Haptics tick while you’re moving (Android only).</p>
-    <button id="closeHelp">Close</button>
-  </dialog>
-
-  <div id="rotateOverlay" hidden>
-    📱 Please rotate your device back to <b>portrait</b> to continue.
   </div>
-
-  <script src="app.js"></script>
+  <img class="magician" src="https://eu-prod.asyncgw.teams.microsoft.com/v1/objects/0-neu-d24-7fc298b2ba4721b1d9a5c3f258c3deb0/views/imagemedium" alt="magician" />
+</div>
+<canvas id="wand"></canvas>
+<script src="app.js"></script>
 </body>
 </html>
