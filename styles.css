@@ -1,14 +1,16 @@
 
 body{margin:0;font-family:sans-serif;background:linear-gradient(135deg,#ff8bd1,#8b7bff);height:100vh;overflow:hidden;color:white}
-.screen{display:flex;height:100%}
-.left{flex:1;padding:40px;display:flex;flex-direction:column;justify-content:center;max-width:60%}
-.title{font-size:2.4rem;font-weight:800;margin:0 0 10px}
+.screen{display:flex;height:100%;position:relative}
+.left{flex:1;padding:40px;display:flex;flex-direction:column;justify-content:center;z-index:2}
+.title{font-size:2.4rem;margin:0 0 10px}
 .subtitle{font-size:1.4rem;margin:0 0 30px}
-.controls{display:flex;flex-direction:column;gap:12px}
+.controls{display:flex;flex-direction:column;gap:12px;max-width:260px}
 .chip{background:#ffffff55;padding:10px 15px;border-radius:14px;color:#000;font-weight:600;display:flex;flex-direction:column}
+.small{font-size:0.9rem;padding:6px 10px}
 .cta{background:#5c3bff;color:white;font-size:1.2rem;padding:12px;border-radius:12px;font-weight:bold;border:none}
-.magician{height:95vh;position:absolute;right:0;bottom:0}
-#wand{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:black}
-.stopBtn{position:fixed;top:20px;right:20px;background:#ff4b4b;padding:10px 18px;border:none;color:white;border-radius:12px;font-size:1.1rem;}
-dialog{border:none;border-radius:16px;padding:20px;background:white;color:black}
+.magician{height:90vh;position:absolute;right:0;bottom:0;z-index:1;padding-right:8px}
+#wand{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:black;z-index:5}
+.stopBtn{position:fixed;top:20px;right:20px;background:#ff4b4b;padding:10px 18px;border:none;color:white;border-radius:12px;font-size:1.1rem;z-index:6}
+.debug{position:fixed;bottom:0;left:0;background:#000a;color:#0f0;padding:10px;font-family:monospace;z-index:10;max-height:40%;overflow:auto}
+dialog{border:none;border-radius:16px;padding:20px;background:white;color:black;z-index:20}
 dialog::backdrop{background:#0007}

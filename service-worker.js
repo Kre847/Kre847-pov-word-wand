@@ -1,1 +1,1 @@
-const CACHE='ww-v9-1';self.addEventListener('fetch',e=>{});
+const CACHE='ww-v9-2';self.addEventListener('fetch',e=>{});

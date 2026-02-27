@@ -1,7 +1,2 @@
 
-{
-  "name":"Word Wand v9.1",
-  "display":"standalone",
-  "orientation":"portrait",
-  "start_url":"./"
-}
+{"name":"Word Wand v9.2","display":"standalone","orientation":"portrait","start_url":"./"}
