@@ -1,1 +1,13 @@
-body{margin:0;background:#000;color:#fff;font:16px system-ui;}#wand{position:fixed;top:0;left:0;width:100vw;height:100vh;display:none;background:#000;} .cta{background:purple;color:#fff;padding:14px;border:none;border-radius:8px;} .screen{padding:24px;} .chip{background:#eee;color:#000;padding:10px;margin:4px;border-radius:10px;} .textLarge{padding:12px;} .stopBtn{position:fixed;top:16px;right:16px;background:#f33;color:#fff;padding:10px;border:none;border-radius:10px;}
+
+body { margin: 0; background:#000; color:#fff; font:16px system-ui; }
+.screen { padding:24px; }
+.left { max-width:640px; }
+.title { font-size:2.4rem; font-weight:800; color:#ffe663; margin-bottom:8px; }
+.subtitle { margin-bottom:18px; }
+.controls { display:flex; flex-direction:column; gap:12px; }
+.chip { background:#eee; color:#000; padding:12px; border-radius:12px; }
+.small { padding:8px; display:inline-block; }
+.textLarge { padding:12px; font-size:22px; border-radius:12px; border:2px solid #0003; }
+#wand { position:fixed; top:0; left:0; width:100vw; height:100vh; background:#000; display:none; z-index:999; }
+.cta { padding:12px; background:#7d3bff; color:#fff; border:none; border-radius:10px; font-weight:800; font-size:1.2rem; }
+.stopBtn { position:fixed; top:16px; right:16px; background:#f44; color:#fff; padding:10px; border:none; border-radius:10px; z-index:1000; }
