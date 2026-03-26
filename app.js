@@ -76,33 +76,36 @@ function hsv(h,s,v){ let c=v*s,x=c*(1-Math.abs((h/60)%2-1)),m=v-c,r=0,g=0,b=0;
 
 function draw(t){
   if(!playing) return;
-  const w=wand.width,h=wand.height;
+  const w = wand.width, h = wand.height;
 
-  if(t-lastTime>parseInt(colTiming.value)){
-    colIndex=(colIndex+1)%columns.length;
-    lastTime=t;
+  if(t - lastTime > parseInt(colTiming.value)){
+    colIndex = (colIndex + 1) % columns.length;
+    lastTime = t;
   }
 
-  ctx.fillStyle='rgba(0,0,0,0.25)';
+  ctx.fillStyle = "rgba(0,0,0,0.25)";
   ctx.fillRect(0,0,w,h);
 
-  const col=columns[colIndex];
-  const spacing=h*0.06;
-  const diam=spacing*0.8;
-  const top=h/2-(7*spacing)/2;
+  const col = columns[colIndex];
 
-  const disco=colorSelect.value==='disco';
+  // ✅ FIXED SPACING + BIGGER DOTS + LOWER POSITION
+  const spacing = h * 0.085;      // increased spacing
+  const diam = spacing * 0.95;    // bigger dots
+  const top = h * 0.18;           // shifted downward
 
-  for(let r=0;r<7;r++){
+  const disco = (colorSelect.value === "disco");
+
+  for(let r = 0; r < 7; r++){
     if(col[r]){
       ctx.beginPath();
-      ctx.fillStyle=disco ? hsv(hueBase+r*15,1,1) : colorSelect.value;
-      ctx.arc(w/2,top+r*spacing,diam/2,0,Math.PI*2);
+      ctx.fillStyle = disco ? hsv(hueBase + r*15, 1, 1) : colorSelect.value;
+      ctx.arc(w/2, top + r * spacing, diam/2, 0, Math.PI * 2);
       ctx.fill();
     }
   }
 
-  if(disco) hueBase=(hueBase+parseFloat(discoSpeed.value))%360;
+  if(disco)
+    hueBase = (hueBase + parseFloat(discoSpeed.value)) % 360;
 
   requestAnimationFrame(draw);
 }
